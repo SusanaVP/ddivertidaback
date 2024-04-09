@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "story")
+@Table(name = "stories")
 public class Stories {
 
 	@Id
@@ -46,6 +46,11 @@ public class Stories {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "Stories [id=" + id + ", description=" + description + ", title=" + title + "]";
 	}
 
 }

@@ -18,11 +18,11 @@ public class StoryCategoriesMapping {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL) 
-    @JoinColumn(name = "story_id", referencedColumnName = "id", nullable = false)
-    private Stories story;
+    @JoinColumn(name = "stories_id", referencedColumnName = "id", nullable = false)
+    private Stories stories;
 
     @ManyToOne
-    @JoinColumn(name = "category_story_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "categories_story_id", referencedColumnName = "id", nullable = false)
     private CategoriesStory categoriesStory;
 
     public StoryCategoriesMapping() {
@@ -36,12 +36,12 @@ public class StoryCategoriesMapping {
 		this.id = id;
 	}
 
-	public Stories getStory() {
-		return story;
+	public Stories getStories() {
+		return stories;
 	}
 
-	public void setStory(Stories story) {
-		this.story = story;
+	public void setStories(Stories story) {
+		this.stories = story;
 	}
 
 	public CategoriesStory getCategoriesStory() {

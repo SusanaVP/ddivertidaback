@@ -33,7 +33,7 @@ public class CategoriesStory {
 	@Column
 	private boolean christmas = false;
 
-	// Constructor vacío (necesario para JPA)
+
 	public CategoriesStory() {
 	}
 

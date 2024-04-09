@@ -26,23 +26,22 @@ public class CorsConfig {
 	}
 
 }
-/*      UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = new CorsConfiguration();
-
-        // Especifica el origen permitido (tu dominio)
-        config.setAllowedOrigins(Collections.singletonList("https://ddivertida.es"));
-        
-        // Especifica las cabeceras permitidas
-        config.addAllowedHeader("Authorization");
-        config.addAllowedHeader("Content-Type");
-        
-        // Especifica los métodos permitidos
-        config.addAllowedMethod("GET");
-        config.addAllowedMethod("POST");
-        config.addAllowedMethod("PUT");
-        config.addAllowedMethod("DELETE");
-        
-        source.registerCorsConfiguration("/**", config);
-        return new CorsFilter(source);
-    }
-}*/
+/*
+ * UrlBasedCorsConfigurationSource source = new
+ * UrlBasedCorsConfigurationSource(); CorsConfiguration config = new
+ * CorsConfiguration();
+ * 
+ * // Especifica el origen permitido (tu dominio)
+ * config.setAllowedOrigins(Collections.singletonList("https://ddivertida.es"));
+ * 
+ * // Especifica las cabeceras permitidas
+ * config.addAllowedHeader("Authorization");
+ * config.addAllowedHeader("Content-Type");
+ * 
+ * // Especifica los métodos permitidos config.addAllowedMethod("GET");
+ * config.addAllowedMethod("POST"); config.addAllowedMethod("PUT");
+ * config.addAllowedMethod("DELETE");
+ * 
+ * source.registerCorsConfiguration("/**", config); return new
+ * CorsFilter(source); } }
+ */

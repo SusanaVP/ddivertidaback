@@ -17,4 +17,18 @@ public class StoryService {
 	public List<Stories> getAllStories() {
       return storyRepository.findAll();
 	}
+
+	public List<Long> getCategoryIdByCategory(String category) {
+		return storyRepository.findCategoryIdsByCategory(category);
+	}
+
+	public List<Long> findStoryIdsByCategoryIds(List<Long> categoryIds) {
+		return storyRepository.findStoryIdsByCategoryIds(categoryIds);
+	}
+
+	public List<Stories> getStoriesByIds(List<Long> storyIds) {
+		return storyRepository.findStoriesByIds(storyIds);
+	}
+	
+	
 }

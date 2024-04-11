@@ -11,30 +11,46 @@ import com.iessotero.divertida.repository.IVideoRepository;
 public class VideoService {
 
 	@Autowired
-	private IVideoRepository VideoRepository;
+	private IVideoRepository videoRepository;
 
 	public List<Videos> findFavoritesVideos(Long idUser) {
-		return (List<Videos>) VideoRepository.findFavoritesVideos(idUser);
+		return (List<Videos>) videoRepository.findFavoritesVideos(idUser);
 	}
 
 	public void addFavoriteVideo(Long idVideo, Long idUser) {
-		int result = VideoRepository.existsFavoriteVideo(idVideo, idUser);
+		int result = videoRepository.existsFavoriteVideo(idVideo, idUser);
 		if (result == 1) {
-			VideoRepository.updateFavoriteVideo(idVideo, idUser);
+			videoRepository.updateFavoriteVideo(idVideo, idUser);
 		} else {
-			VideoRepository.addFavoriteVideo(idVideo, idUser);
+			videoRepository.addFavoriteVideo(idVideo, idUser);
 		}
 	}
 
 	public void deleteFavoriteVideos(Long idVideo, Long idUser) {
-		VideoRepository.deleteFavoriteVideo(idVideo, idUser);
+		videoRepository.deleteFavoriteVideo(idVideo, idUser);
 	}
 
 	public List<Videos> getAllVideos() {
-		return VideoRepository.findAll();
+		return videoRepository.findAll();
 	}
 
 	public List<Videos> recommendedVideos() {
-		return VideoRepository.recommendedVideos();
+		return videoRepository.recommendedVideos();
 	}
+	
+
+	public List<Videos> getVideosByCategory(String category) {
+		Long categoryId = videoRepository.getCategoryId(category);
+
+		if (categoryId != null) {
+			List<Long> videosIds = videoRepository.getCategoryId(categoryId);
+
+			if (!videosIds.isEmpty()) {
+
+				return videoRepository.getVideosByIds(videosIds);
+			}
+		}
+		return null;
+	}
+
 }

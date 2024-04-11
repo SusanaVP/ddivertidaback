@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "categories_riddles")
-public class CategoriesRiddles {
+@Table(name = "category")
+public class CategoriesVideo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,8 @@ public class CategoriesRiddles {
 
 	@Column(length = 20)
 	private String nameCategory;
-
-	public CategoriesRiddles() {
-		super();
+	
+	public CategoriesVideo() {
 	}
 
 	public Long getId() {
@@ -37,7 +36,5 @@ public class CategoriesRiddles {
 	public void setNameCategory(String nameCategory) {
 		this.nameCategory = nameCategory;
 	}
-	
-	
-	
+
 }

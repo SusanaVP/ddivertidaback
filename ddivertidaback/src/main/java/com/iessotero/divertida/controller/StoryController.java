@@ -25,6 +25,7 @@ public class StoryController {
 		return storyService.getAllStories();
 	}
 
+	/*Cambiar esto al cambiar la tabla*/
 	@GetMapping("/storiesByCategory/{category}")
 	public List<Stories> getStoriesByCategories(@PathVariable String category) {
 

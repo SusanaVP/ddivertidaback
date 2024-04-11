@@ -1,10 +1,13 @@
 package com.iessotero.divertida.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,6 +30,10 @@ public class Videos {
 	@Column(length = 255)
 	private String url;
 
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
+	private CategoriesVideo categoriesVideo;
+	
 	public Videos() {
 	}
 
@@ -69,5 +76,14 @@ public class Videos {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public CategoriesVideo getCategoriesVideo() {
+		return categoriesVideo;
+	}
+
+	public void setCategoriesVideo(CategoriesVideo categoriesVideo) {
+		this.categoriesVideo = categoriesVideo;
+	}
+	
 
 }

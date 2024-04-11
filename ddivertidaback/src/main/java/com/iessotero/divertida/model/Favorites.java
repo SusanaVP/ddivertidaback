@@ -40,7 +40,7 @@ public class Favorites {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
 	private User user;
-
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "video_id", referencedColumnName = "id", insertable = false, updatable = false)
 	private Videos video;

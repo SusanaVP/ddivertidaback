@@ -37,4 +37,8 @@ public interface IVideoRepository extends JpaRepository<Videos, Long> {
 
 	@Query("SELECT v FROM Videos v WHERE v.recommended = true")
 	List<Videos> recommendedVideos();
+
+	Long getCategoryId(String category);
+
+	void getVideosByIds(List<Long> videosIds);
 }

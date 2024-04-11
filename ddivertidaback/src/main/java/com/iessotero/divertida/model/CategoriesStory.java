@@ -15,74 +15,10 @@ public class CategoriesStory {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column
-	private boolean classic = false;
-
-	@Column
-	private boolean shortStory = false;
-
-	@Column
-	private boolean animal = false;
-
-	@Column
-	private boolean princess = false;
-
-	@Column
-	private boolean sleep = false;
-
-	@Column
-	private boolean christmas = false;
-
+	@Column(length = 20)
+	private String nameCategory;
 
 	public CategoriesStory() {
-	}
-
-	public boolean isClassic() {
-		return classic;
-	}
-
-	public void setClassic(boolean classic) {
-		this.classic = classic;
-	}
-
-	public boolean isShortStory() {
-		return shortStory;
-	}
-
-	public void setShortStory(boolean shortStory) {
-		this.shortStory = shortStory;
-	}
-
-	public boolean isAnimal() {
-		return animal;
-	}
-
-	public void setAnimal(boolean animal) {
-		this.animal = animal;
-	}
-
-	public boolean isPrincess() {
-		return princess;
-	}
-
-	public void setPrincess(boolean princess) {
-		this.princess = princess;
-	}
-
-	public boolean isSleep() {
-		return sleep;
-	}
-
-	public void setSleep(boolean sleep) {
-		this.sleep = sleep;
-	}
-
-	public boolean isChristmas() {
-		return christmas;
-	}
-
-	public void setChristmas(boolean christmas) {
-		this.christmas = christmas;
 	}
 
 	public Long getId() {
@@ -92,5 +28,15 @@ public class CategoriesStory {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public String getNameCategory() {
+		return nameCategory;
+	}
+
+	public void setNameCategory(String nameCategory) {
+		this.nameCategory = nameCategory;
+	}
+
+	
 
 }

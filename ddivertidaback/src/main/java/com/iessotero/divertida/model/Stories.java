@@ -1,10 +1,13 @@
 package com.iessotero.divertida.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,6 +23,10 @@ public class Stories {
 
 	@Column(length = 255)
 	private String title;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
+	private CategoriesStory categoriesStory;
 
 	public Stories() {
 	}
@@ -46,6 +53,14 @@ public class Stories {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public CategoriesStory getCategoriesStory() {
+		return categoriesStory;
+	}
+
+	public void setCategoriesStory(CategoriesStory categoriesStory) {
+		this.categoriesStory = categoriesStory;
 	}
 
 	@Override

@@ -25,32 +25,32 @@ public class StoryController {
 		return storyService.getAllStories();
 	}
 
-	/*Cambiar esto al cambiar la tabla*/
-	@GetMapping("/storiesByCategory/{category}")
-	public List<Stories> getStoriesByCategories(@PathVariable String category) {
-
-		List<Long> categoryIds = storyService.getCategoryIdByCategory(category);
-
-		if (!categoryIds.isEmpty()) {
-
-			List<Long> storyIds = storyService.findStoryIdsByCategoryIds(categoryIds);
-
-			if (!storyIds.isEmpty()) {
-				List<Stories> stories = storyService.getStoriesByIds(storyIds);
-
-				if (!stories.isEmpty()) {
-					  System.out.println(stories.toString());
-					return stories;
-				} else {
-					return null;
-				}
-			} else {
-				return null;
-			}
-		} else {
-
-			return null;
-		}
-	}
+//	/*Cambiar esto al cambiar la tabla*/
+//	@GetMapping("/storiesByCategory/{category}")
+//	public List<Stories> getStoriesByCategories(@PathVariable String category) {
+//
+//		List<Long> categoryIds = storyService.getCategoryIdByCategory(category);
+//
+//		if (!categoryIds.isEmpty()) {
+//
+//			List<Long> storyIds = storyService.findStoryIdsByCategoryIds(categoryIds);
+//
+//			if (!storyIds.isEmpty()) {
+//				List<Stories> stories = storyService.getStoriesByIds(storyIds);
+//
+//				if (!stories.isEmpty()) {
+//					  System.out.println(stories.toString());
+//					return stories;
+//				} else {
+//					return null;
+//				}
+//			} else {
+//				return null;
+//			}
+//		} else {
+//
+//			return null;
+//		}
+//	}
 
 }

@@ -10,7 +10,7 @@ import com.iessotero.divertida.model.Stories;
 
 public interface IStoryRepository extends JpaRepository<Stories, Long> {
 
-	@Query("SELECT c.id FROM CategoriesStory c WHERE " +
+	/*@Query("SELECT c.id FROM CategoriesStory c WHERE " +
 	        "(:category = 'classic' AND c.classic = true) OR " +
 	        "(:category = 'short' AND c.shortStory = true) OR " +
 	        "(:category = 'animal' AND c.animal = true) OR " +
@@ -20,7 +20,7 @@ public interface IStoryRepository extends JpaRepository<Stories, Long> {
 	List<Long> findCategoryIdsByCategory(@Param("category") String category);
 
 	@Query("SELECT scm.stories.id FROM StoryCategoriesMapping scm WHERE scm.categoriesStory.id IN :categoryIds")
-	List<Long> findStoryIdsByCategoryIds(@Param("categoryIds") List<Long> categoryIds);
+	List<Long> findStoryIdsByCategoryIds(@Param("categoryIds") List<Long> categoryIds);*/
 
 	@Query("SELECT s FROM Stories s WHERE s.id IN :storyIds")
 	List<Stories> findStoriesByIds(@Param("storyIds") List<Long> storyIds);

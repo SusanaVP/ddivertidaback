@@ -42,20 +42,4 @@ public class VideoController {
 	public List<Videos> getRecommendedVideos() {
 		return this.videoService.recommendedVideos();
 	}
-	
-
-	@GetMapping("/categories/{category}")
-	public List<Videos> getVideosByCategory(@PathVariable String category) {
-		
-		List<Videos> videos = this.videoService.getVideosByCategory(category);
-		
-		/*consigo la id de la categoria que ocincide con el sTring*/
-		
-		/*Luego con esa id busco en la tabla mapping y obtengo los IDs de los vídeos de esas categorías*/
-		
-		/*Ñuego devuelvo los vídeos que coincidan..*/
-		
-		
-		return  this.videoService.getVideosByCategory(category); 
-	}
 }

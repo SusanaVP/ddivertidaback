@@ -38,19 +38,4 @@ public class VideoService {
 		return videoRepository.recommendedVideos();
 	}
 	
-
-	public List<Videos> getVideosByCategory(String category) {
-		Long categoryId = videoRepository.getCategoryId(category);
-
-		if (categoryId != null) {
-			List<Long> videosIds = videoRepository.getCategoryId(categoryId);
-
-			if (!videosIds.isEmpty()) {
-
-				return videoRepository.getVideosByIds(videosIds);
-			}
-		}
-		return null;
-	}
-
 }

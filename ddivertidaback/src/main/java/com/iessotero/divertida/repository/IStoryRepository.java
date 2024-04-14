@@ -24,4 +24,9 @@ public interface IStoryRepository extends JpaRepository<Stories, Long> {
 
 	@Query("SELECT s FROM Stories s WHERE s.id IN :storyIds")
 	List<Stories> findStoriesByIds(@Param("storyIds") List<Long> storyIds);
+
+	@Query("SELECT cs.id FROM CategoriesStory cs WHERE cs.nameCategory like %:category%")
+	Long findCategoryStoryId(@Param("category") String category);
+
+	 List<Stories> findByCategoriesStoryId(Long categoryId);
 }

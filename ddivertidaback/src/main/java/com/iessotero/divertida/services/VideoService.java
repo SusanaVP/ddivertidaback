@@ -13,9 +13,9 @@ public class VideoService {
 	@Autowired
 	private IVideoRepository videoRepository;
 
-	public List<Videos> findFavoritesVideos(Long idUser) {
-		return (List<Videos>) videoRepository.findFavoritesVideos(idUser);
-	}
+//	public List<Videos> findFavoritesVideos(Long idUser) {
+//		return (List<Videos>) videoRepository.findFavoritesVideos(idUser);
+//	}
 
 	public void addFavoriteVideo(Long idVideo, Long idUser) {
 		int result = videoRepository.existsFavoriteVideo(idVideo, idUser);
@@ -36,6 +36,10 @@ public class VideoService {
 
 	public List<Videos> recommendedVideos() {
 		return videoRepository.recommendedVideos();
+	}
+
+	public List<Videos> findVideosByCategory(String category) {
+		return videoRepository.findVideosByCategory(category);
 	}
 	
 }

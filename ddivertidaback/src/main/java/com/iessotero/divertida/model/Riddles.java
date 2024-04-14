@@ -24,7 +24,7 @@ public class Riddles {
 	private String title;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
+	@JoinColumn(name = "category_id")
 	private CategoriesRiddles categoriesRiddles;
 
 	public Riddles() {

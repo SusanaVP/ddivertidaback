@@ -31,7 +31,7 @@ public class Videos {
 	private String url;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
+	@JoinColumn(name = "category_id")
 	private CategoriesVideo categoriesVideo;
 	
 	public Videos() {

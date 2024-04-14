@@ -15,20 +15,11 @@ public class StoryService {
 	private IStoryRepository storyRepository;
 
 	public List<Stories> getAllStories() {
-      return storyRepository.findAll();
+		return storyRepository.findAll();
 	}
 
-//	public List<Long> getCategoryIdByCategory(String category) {
-//		return storyRepository.findCategoryIdsByCategory(category);
-//	}
-//
-//	public List<Long> findStoryIdsByCategoryIds(List<Long> categoryIds) {
-//		return storyRepository.findStoryIdsByCategoryIds(categoryIds);
-//	}
-
-	public List<Stories> getStoriesByIds(List<Long> storyIds) {
-		return storyRepository.findStoriesByIds(storyIds);
+	public List<Stories> getStoryById(Long categoryId) {
+		return storyRepository.findByCategoriesStoryId(categoryId);
 	}
-	
-	
+
 }

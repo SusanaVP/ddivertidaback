@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.iessotero.divertida.model.Videos;
@@ -14,8 +15,8 @@ import jakarta.transaction.Transactional;
 @Repository
 public interface IVideoRepository extends JpaRepository<Videos, Long> {
 
-	@Query("SELECT f.video FROM Favorites f WHERE f.userId = :idUser")
-	List<Videos> findFavoritesVideos(Long idUser);
+//	@Query("SELECT f.video FROM Favorites f WHERE f.userId = :idUser")
+//	List<Videos> findFavoritesVideos(Long idUser);
 
 	@Modifying
 	@Transactional
@@ -37,5 +38,8 @@ public interface IVideoRepository extends JpaRepository<Videos, Long> {
 
 	@Query("SELECT v FROM Videos v WHERE v.recommended = true")
 	List<Videos> recommendedVideos();
+
+	@Query("SELECT v FROM Videos v WHERE v.categoriesVideo.nameCategory  like %:category%")
+	List<Videos> findVideosByCategory(@Param("category") String category);
 
 }

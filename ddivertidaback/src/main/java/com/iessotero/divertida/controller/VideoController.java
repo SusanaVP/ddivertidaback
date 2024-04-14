@@ -32,14 +32,19 @@ public class VideoController {
 	public void addFavoriteVideo(@PathVariable Long idVideo, @PathVariable Long idUser) {
 		this.videoService.addFavoriteVideo(idVideo, idUser);
 	}
-
-	@GetMapping("/favorites/{idUser}")
-	public List<Videos> getFavoritesVideos(@PathVariable Long idUser) {
-		return this.videoService.findFavoritesVideos(idUser);
-	}
+//
+//	@GetMapping("/favorites/{idUser}")
+//	public List<Videos> getFavoritesVideos(@PathVariable Long idUser) {
+//		return this.videoService.findFavoritesVideos(idUser);
+//	}
 
 	@GetMapping("/recommended")
 	public List<Videos> getRecommendedVideos() {
 		return this.videoService.recommendedVideos();
+	}
+	
+	@GetMapping("/categories/{category}")
+	public List<Videos> getVideosByCategories(@PathVariable String category) {
+		return this.videoService.findVideosByCategory(category);
 	}
 }

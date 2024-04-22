@@ -49,4 +49,20 @@ public class BlogController {
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+
+//	@PostMapping("/uploadFile")
+//	public String uploadFile(@RequestParam("file") MultipartFile file) {
+//		// Obtiene la ubicación de la carpeta de almacenamiento
+//		String uploadDir = fileStorageProperties.getUploadDir();
+//
+//		// Guarda la imagen en la carpeta de almacenamiento
+//		try {
+//			File destFile = new File(uploadDir + "/" + file.getOriginalFilename());
+//			file.transferTo(destFile);
+//			return "File uploaded successfully!";
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//			return "Failed to upload file.";
+//		}
+//	}
 }
